@@ -58,12 +58,11 @@ export const postMessage = async (req, res) => {
     }
 
     const pybackendData = { ...chat.toObject(), sources };
-    console.log('PYBACKEND_DATA', pybackendData);
+    // console.log('PYBACKEND_DATA', pybackendData);
     const pyres = await axios.post(
       'https://hackrx-llms-api.anuranroy1.repl.co/get_prompt',
       pybackendData
     );
-    console.log('RESPONSE', pyres.json());
     let botreply = '';
     let role = pyres?.data[0]?.message?.role;
     for (let i = 0; i < pyres.data.length; i++) {
