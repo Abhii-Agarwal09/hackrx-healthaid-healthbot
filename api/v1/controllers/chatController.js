@@ -60,7 +60,7 @@ export const postMessage = async (req, res) => {
     const pybackendData = { ...chat.toObject(), sources };
     // console.log('PYBACKEND_DATA', pybackendData);
     const pyres = await axios.post(
-      'https://hackrx-llms-api.anuranroy1.repl.co/get_prompt',
+      'https://942a-103-68-38-66.ngrok-free.app/get_prompt',
       pybackendData
     );
     let botreply = '';
