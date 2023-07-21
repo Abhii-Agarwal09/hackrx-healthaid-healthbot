@@ -57,7 +57,7 @@ export const postMessage = async (req, res) => {
       await chat.save();
     }
 
-    const pybackendData = { ...chat, sources };
+    const pybackendData = { ...chat.toObject(), sources };
     console.log('PYBACKEND_DATA', pybackendData);
     const pyres = await axios.post(
       'https://hackrx-llms-api.anuranroy1.repl.co/get_prompt',
